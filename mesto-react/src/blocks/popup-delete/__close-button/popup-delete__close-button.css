@@ -1,0 +1,29 @@
+.popup-delete__close-button{
+    position: absolute;
+    right: -42px;
+    top: -42px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    background-image: url(../../../images/Close.svg);
+    height: 32px;
+    width: 32px;
+    padding: 0;
+  }
+  
+  
+  .popup-add__close-button:hover {
+    opacity: 0.6;
+    transition: 0.5s;
+  }
+  
+  
+  @media (max-width: 670px) {
+    .popup-add__close-button {
+      width: 20px;
+      height: 20px;
+      right: 0px;
+      top: -30px;
+    }
+  }
+  
