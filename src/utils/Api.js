@@ -1,5 +1,5 @@
 
-export class Api {
+ class Api {
     constructor({ baseUrl, headers }) {
       this._headers = headers
       this._baseUrl = baseUrl
@@ -15,7 +15,7 @@ export class Api {
         .then( this._checkResponse)
     }
   
-    getCards() {
+    getCards() {//getInitialCards
       return fetch(`${this._baseUrl}/cards `, {
         headers: this._headers
       })
@@ -85,4 +85,3 @@ export class Api {
     }
   });
   
-  export default api;

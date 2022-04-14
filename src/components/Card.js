@@ -1,6 +1,5 @@
-import React from "react";
 
-function Card(props) {
+export default function Card(props) {
   function handleClick() {
     props.onCardClick(props.card);
   }
@@ -11,7 +10,7 @@ function Card(props) {
       className="element__delete"
       title="Удалить"></button>
       <img className="element__pic"
-      src ={props.card.link}
+      src ={`${props.card.link}`}
       alt ={props.card.name}
       onClick={handleClick}/>
       <div className="element__box">
@@ -25,4 +24,4 @@ function Card(props) {
       </div>
 
       </div>);}
-      export default Card;
+     
