@@ -1,4 +1,6 @@
-export default function Footer() {
+import React from "react";
+
+ function Footer() {
   return (
     <footer className= "footer">
         <p className="footer__subtitle">
@@ -6,3 +8,4 @@ export default function Footer() {
         </p>
     </footer>
     );}
+    export default Footer;

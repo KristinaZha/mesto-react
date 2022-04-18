@@ -1,5 +1,5 @@
 
- class Api {
+ export class Api {
     constructor({ baseUrl, headers }) {
       this._headers = headers
       this._baseUrl = baseUrl
@@ -8,20 +8,23 @@
     _checkResponse(res) {
       return res.ok ? res.json() : Promise.reject(res.status)
   }
+  getCards() {
+    return fetch(`${this._baseUrl}/cards `, {
+     
+      headers: this._headers
+    })
+    .then( this._checkResponse);
+  }
+
     getProfile() {
       return fetch(`${this._baseUrl}/users/me`, {
-        headers: this._headers
+       
+        headers: this._headers,
       })
         .then( this._checkResponse)
     }
   
-    getCards() {//getInitialCards
-      return fetch(`${this._baseUrl}/cards `, {
-        headers: this._headers
-      })
-      .then( this._checkResponse)
-    }
-  
+    
     editProfile(name, about) {
       return fetch(`${this._baseUrl}/users/me `, {
         method: "PATCH",
@@ -85,3 +88,4 @@
     }
   });
   
+export default api;

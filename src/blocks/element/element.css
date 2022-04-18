@@ -1,7 +1,6 @@
 .element {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   margin: 0;
   background: #ffffff;
   object-fit: initial;
