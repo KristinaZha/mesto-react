@@ -42,18 +42,19 @@ export class Api {
     }).then(this._checkResponse);
   }
 
-  deleteLike(id) {
-    return fetch(`${this._baseUrl}/cards/${id}/likes `, {
-      method: "DELETE",
-      headers: this._headers,
-    }).then(this._checkResponse);
-  }
-  addLike(id) {
-    return fetch(`${this._baseUrl}/cards/${id}/likes `, {
+   changeLike(cardId, isLiked) {
+    if (isLiked) {
+      return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+        method: "DELETE",
+        headers: this._headers,
+      }).then(this._checkResponse);
+    }
+    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: "PUT",
       headers: this._headers,
     }).then(this._checkResponse);
   }
+
 
   changeAvatar(avatar) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
